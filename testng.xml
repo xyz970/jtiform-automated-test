@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Testing" verbose="1" parallel="none" thread-count="1">
+	<test name="E2E Test">
+	     <classes>
+	      	<class name="helpers.Setup"/>
+	        <class name="functionalities.LoginTest"/>
+	     </classes>
+	 </test>
+	 
+</suite>
