@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import helpers.Setup;
@@ -25,6 +26,7 @@ public class LoginTest {
 		inputForm("email", "");
 		inputForm("password", "");
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();
+		Reporter.log("User melakukan login tanpa input field Email dan Password, dan tidak menandai checkbox Remember Me");
 		assertWhenNotRedirected();
 	}
 	
@@ -40,6 +42,7 @@ public class LoginTest {
 		inputForm("password", "");
 		driver.findElement(By.className("custom-control-label")).click();
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();
+		Reporter.log("User melakukan login tanpa input field Email dan Password, dan menandai checkbox Remember Me");
 		assertWhenNotRedirected();
 	}
 	
@@ -54,6 +57,7 @@ public class LoginTest {
 		inputForm("email", "e41212101@student.polije.ac.id");
 		inputForm("password", "");
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();
+		Reporter.log("User melakukan login dengan input field Email dan mengosongkan field Password, serta tidak menandai checkbox Remember Me");
 		assertWhenNotRedirected();
 	}
 	
@@ -69,6 +73,7 @@ public class LoginTest {
 		inputForm("password", "");
 		driver.findElement(By.className("custom-control-label")).click();
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();
+		Reporter.log("User melakukan login dengan input field Email dan mengosongkan field Password, serta tidak menandai checkbox Remember Me");
 		assertWhenNotRedirected();
 	}
 	
@@ -84,6 +89,7 @@ public class LoginTest {
 		inputForm("email", "");
 		inputForm("password", "jtipolije");
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();
+		Reporter.log("User melakukan login dengan input field Password dan mengosongkan field Email, serta tidak menandai checkbox Remember Me");
 		assertWhenNotRedirected();
 	}
 	
@@ -99,6 +105,7 @@ public class LoginTest {
 		inputForm("password", "jtipolije");
 		driver.findElement(By.className("custom-control-label")).click();
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();
+		Reporter.log("User melakukan login dengan input field Password dan mengosongkan field Email, serta menandai checkbox Remember Me");
 		assertWhenNotRedirected();
 	}
 	
@@ -113,6 +120,7 @@ public class LoginTest {
 		inputForm("email", "ekputri21@gmail.com");
 		inputForm("password", "ekaputri21");
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();
+		Reporter.log("User melakukan login dengan input field Email dan Password menggunakan data yang tidak sesuai (invalid), dan tidak menandai checkbox Remember Me");
 		assertWhenNotRedirected();
 	}
 	
@@ -128,6 +136,7 @@ public class LoginTest {
 		inputForm("password", "ekaputri21");
 		driver.findElement(By.className("custom-control-label")).click();
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();
+		Reporter.log("User melakukan login dengan input field Email dan Password menggunakan data yang tidak sesuai (invalid), dan menandai checkbox Remember Me");
 		assertWhenNotRedirected();
 	}
 	
@@ -142,6 +151,7 @@ public class LoginTest {
 		inputForm("email", "e41212101@student.polije.ac.id");
 		inputForm("password", "jtipolije");
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();
+		Reporter.log("User melakukan login dengan input field Email dan Password menggunakan data yang sesuai (valid), dan tidak menandai checkbox Remember Me");
 	}
 	
 	
@@ -160,6 +170,7 @@ public class LoginTest {
 		inputForm("password", "jtipolije");
 		driver.findElement(By.className("custom-control-label")).click();
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();
+		Reporter.log("User melakukan login dengan input field Email dan Password menggunakan data yang sesuai (valid), dan menandai checkbox Remember Me");
 	}
 	
 	
