@@ -4,7 +4,12 @@
 	     <classes>
 	      	<class name="helpers.Setup"/>
 	        <class name="functionalities.LoginTest"/>
+	        <class name="functionalities.EditUserTest"/>
+	        <class name="functionalities.KuisionerTest"/>
+	        <class name="functionalities.PrintTest"/>
+	        <class name="functionalities.DashboardTest"/>
 	     </classes>
+	     
 	 </test>
 	 
 </suite>

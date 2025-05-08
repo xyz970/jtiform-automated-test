@@ -31,7 +31,7 @@ public class Setup {
     @AfterSuite
     public void afterSuite() throws InterruptedException {
     	System.out.print("Testing Selesai");
-        driver.quit();
+//        driver.quit();
     }
 	
 	
@@ -41,6 +41,6 @@ public class Setup {
 	}
 	
 	public static String getWebUrl() {
-		return "https://project-jti.polije.ac.id/jtiform";
+		return "http://project-jti.polije.ac.id/jtiform";
 	}
 }

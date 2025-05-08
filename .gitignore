@@ -1,1 +1,8 @@
 test-output/
+/bin
+/bin
+/bin/functionalities
+/bin/helpers
+bin/functionalities/LoginTest.class
+*.class
+*.class
