@@ -25,7 +25,6 @@ public class PrintTest {
 		inputForm("email", "e41212101@student.polije.ac.id");
 		inputForm("password", "jtipolije");
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();
-		
 		driver.findElement(By.cssSelector("a[data-tm-rule-kuisioner='data-tm-kuisioner-id=6']")).click();
 //		driver.close();		
 		

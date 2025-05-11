@@ -161,11 +161,10 @@ public class LoginTest {
 	/**
 	 * User melakukan login dengan input field Email dan Password menggunakan data yang sesuai (valid), dan tidak menandai checkbox Remember Me
 	 */
-	@Test(groups = "mustLogin",priority = 1)
+	@Test(groups = "mustLogin",priority = 1,dependsOnGroups = "afterBruteforceScenario")
 	public void loginValidInputWithUnchecked() {
 		WebDriver driver;
 		driver = Setup.getDriver();
-		driver.get(Setup.getWebUrl()+"/login");
 		inputForm("email", "e41212101@student.polije.ac.id");
 		inputForm("password", "jtipolije");
 		driver.findElement(By.cssSelector("button[class='btn btn-primary btn-block waves-effect waves-light']")).click();

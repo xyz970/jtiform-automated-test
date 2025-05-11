@@ -3,6 +3,7 @@
 	<test name="E2E Test">
 	     <classes>
 	      	<class name="helpers.Setup"/>
+	      	<class name="security.BruteforceScenario"/>
 	        <class name="performance.LoginTest"/>
 	        <class name="performance.EditUserTest"/>
 	        <class name="performance.KuisionerTest"/>
