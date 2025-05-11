@@ -71,10 +71,9 @@ public class KuisionerTest {
 			int startSequence = 132;
 			while (startSequence <= 146) {
 				checkInputMatchWithCondition(QuestionnaireRating.randomRating(), startSequence, dosenIncrement);
-//				System.err.println("Start Seq " + startSequence);
-//				System.err.println("dosenInc " + dosenIncrement);
 				startSequence++;
 			}
+			
 			if (i < daftarNamaDosen.size()) {
 				driver.findElement(By.partialLinkText("NEXT")).click();
 				resetQuestionSequenceTotal(); // reset sequence

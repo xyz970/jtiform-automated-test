@@ -21,15 +21,13 @@ public class DashboardTest {
 	public void pageHistory() throws InterruptedException {
 		WebDriver driver = Setup.getDriver();
 
-		driver.get(Setup.getWebUrl() + "/student");
+//		driver.get(Setup.getWebUrl() + "/student");
 		
 		Set<String> windowSet = driver.getWindowHandles();
 		driver.switchTo().window(windowSet.iterator().next());
 		
 		
 		Reporter.log("Pengguna mengunjungi halaman history");
-		
-		Thread.sleep(2000);
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -45,7 +43,7 @@ public class DashboardTest {
 
 		Reporter.log("Pengguna mengklik icon Gembok");
 
-		driver.get(Setup.getWebUrl() + "/student");
+//		driver.get(Setup.getWebUrl() + "/student");
 
 		driver.findElement(By.cssSelector("i[class='mdi mdi-lock text-warning']")).click();
 		// cek apakah tombol tidak melakukan fungsi apapun
@@ -60,7 +58,7 @@ public class DashboardTest {
 
 		Reporter.log("Pengguna mengklik icon keluar");
 
-		driver.get(Setup.getWebUrl() + "/student");
+//		driver.get(Setup.getWebUrl() + "/student");
 		driver.findElement(By.cssSelector("i[class='mdi mdi-power text-danger']")).click();
 		// cek apakah tombol tidak melakukan fungsi apapun
 		boolean check = driver.getCurrentUrl().contains("login");
