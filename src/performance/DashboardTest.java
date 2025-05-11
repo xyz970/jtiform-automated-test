@@ -1,4 +1,4 @@
-package functionalities;
+package performance;
 
 import static org.testng.Assert.assertTrue;
 
@@ -17,18 +17,11 @@ import helpers.Setup;
 
 public class DashboardTest {
 
-	@Test(dependsOnGroups = "afterPrint", priority = 3)
+	@Test(dependsOnGroups = "afterKuisioner", priority = 3)
 	public void pageHistory() throws InterruptedException {
 		WebDriver driver = Setup.getDriver();
-
-//		driver.get(Setup.getWebUrl() + "/student");
-		
-		Set<String> windowSet = driver.getWindowHandles();
-		driver.switchTo().window(windowSet.iterator().next());
-		
-		
+		Thread.sleep(2000);
 		Reporter.log("Pengguna mengunjungi halaman history");
-
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("a[title='History']"))))
@@ -43,8 +36,6 @@ public class DashboardTest {
 
 		Reporter.log("Pengguna mengklik icon Gembok");
 
-//		driver.get(Setup.getWebUrl() + "/student");
-
 		driver.findElement(By.cssSelector("i[class='mdi mdi-lock text-warning']")).click();
 		// cek apakah tombol tidak melakukan fungsi apapun
 		boolean check = driver.getCurrentUrl().contains("#");
@@ -52,13 +43,11 @@ public class DashboardTest {
 
 	}
 
-	@Test(dependsOnGroups = "mustLogin", priority = 3, dependsOnMethods = "pageHistory")
+	@Test(dependsOnGroups = "mustLogin", priority = 3, dependsOnMethods = "pageHistory",groups = "afterLogout")
 	public void logoutFeature() {
 		WebDriver driver = Setup.getDriver();
 
 		Reporter.log("Pengguna mengklik icon keluar");
-
-//		driver.get(Setup.getWebUrl() + "/student");
 		driver.findElement(By.cssSelector("i[class='mdi mdi-power text-danger']")).click();
 		// cek apakah tombol tidak melakukan fungsi apapun
 		boolean check = driver.getCurrentUrl().contains("login");

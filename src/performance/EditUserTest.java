@@ -1,4 +1,4 @@
-package functionalities;
+package performance;
 
 import java.time.Duration;
 
@@ -54,7 +54,7 @@ public class EditUserTest {
 		}
 
 		String passwordBaru = "jtipolije";
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		WebElement passwordElement = wait.until(ExpectedConditions.elementToBeClickable(By.name("password")));
 		// password harus sama dengan password_confirmation
 		js.executeScript("arguments[0].scrollIntoView(true);", passwordElement);

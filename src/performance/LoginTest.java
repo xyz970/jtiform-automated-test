@@ -1,4 +1,4 @@
-package functionalities;
+package performance;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;

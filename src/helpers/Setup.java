@@ -31,7 +31,7 @@ public class Setup {
     @AfterSuite
     public void afterSuite() throws InterruptedException {
     	System.out.print("Testing Selesai");
-//        driver.quit();
+        driver.quit();
     }
 	
 	
