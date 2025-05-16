@@ -6,6 +6,7 @@ import java.time.Duration;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,18 +30,33 @@ public class DashboardTest {
 		boolean check = driver.getCurrentUrl().contains("History");
 		assertTrue(check);
 	}
+	
+	
 
+	@Test(dependsOnGroups = "mustLogin", priority = 3, dependsOnMethods = "pageHistory")
+	public void cari() {
+		WebDriver driver = Setup.getDriver();
+
+		Reporter.log("Pengguna mengklik Searchbar");
+
+		driver.findElement(By.cssSelector("input[placeholder='Search...']")).sendKeys("Search");
+		driver.findElement(By.cssSelector("input[placeholder='Search...']")).sendKeys(Keys.ENTER);
+		// cek apakah tombol tidak melakukan fungsi apapun
+		boolean check = driver.getCurrentUrl().contains("?");
+		assertTrue(!check);
+
+	}
 	@Test(dependsOnGroups = "mustLogin", priority = 3, dependsOnMethods = "pageHistory")
 	public void lockFeature() {
 		WebDriver driver = Setup.getDriver();
-
+		
 		Reporter.log("Pengguna mengklik icon Gembok");
-
+		
 		driver.findElement(By.cssSelector("i[class='mdi mdi-lock text-warning']")).click();
 		// cek apakah tombol tidak melakukan fungsi apapun
 		boolean check = driver.getCurrentUrl().contains("#");
 		assertTrue(!check);
-
+		
 	}
 
 	@Test(dependsOnGroups = "mustLogin", priority = 3, dependsOnMethods = "pageHistory",groups = "afterLogout")
@@ -51,6 +67,7 @@ public class DashboardTest {
 		driver.findElement(By.cssSelector("i[class='mdi mdi-power text-danger']")).click();
 		// cek apakah tombol tidak melakukan fungsi apapun
 		boolean check = driver.getCurrentUrl().contains("login");
+		System.out.println(driver.getCurrentUrl().contains("login"));
 
 		// Set hasil test menjadi berhasil ketika page pindah halaman dan set menjadi
 		// gagal ketika sebaliknya
