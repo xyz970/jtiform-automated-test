@@ -82,12 +82,13 @@ public class KuisionerTest {
 			dosenIncrement++;
 		}
 //		driver.findElement(By.partialLinkText("FINISH"));
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		WebElement finishBtn = wait.until(ExpectedConditions.elementToBeClickable(driver
 				.findElement(By.cssSelector("input[class='finish-btn sf-right sf-btn sf-btn-finish']"))));
 
 		//Uncomment kode dibawah untuk mengirim kuisioner
 		finishBtn.click(); 
+		Thread.sleep(4000);
 		
 
 	}
