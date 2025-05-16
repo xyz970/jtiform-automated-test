@@ -184,6 +184,7 @@ public class LoginTest {
 	protected void inputForm(String inputName, String value) {
 		WebDriver driver;
 		driver = Setup.getDriver();
+		driver.findElement(By.name(inputName)).click();
 		driver.findElement(By.name(inputName)).sendKeys(value);
 	}
 	
