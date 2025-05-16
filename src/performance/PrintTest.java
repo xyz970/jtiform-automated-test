@@ -16,7 +16,7 @@ import helpers.Setup;
 
 public class PrintTest {
 
-	@Test(priority = 7)
+	@Test(priority = 7,dependsOnGroups = "afterForgotPassword")
 	public void printBukti() throws AWTException {
 		WebDriver driver = Setup.getDriver();
 		
